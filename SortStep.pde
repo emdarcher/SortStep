@@ -3,8 +3,7 @@ private int largestInt = 100;
 private int [] myArray= new int[numInts];
 private Stopwatch watch = new Stopwatch();
 private Sorts mySorts = new Sorts();
-public void setup()
-{
+public void setup(){
   bubbleSortTest();
   selectionSortTest();
   insertionSortTest();
@@ -13,8 +12,7 @@ public void setup()
 public void draw(){
   //empty!
 }
-public void selectionSortTest()
-{
+public void selectionSortTest(){
   System.out.println("Testing Selection Sort");
   fillArray(numInts, largestInt);
   watch.reset();
@@ -23,8 +21,7 @@ public void selectionSortTest()
   watch.stop();
   System.out.println("Selection Sort took " +watch.elapsedTime()/1000 + " microseconds");
 }
-public void bubbleSortTest()
-{
+public void bubbleSortTest(){
   System.out.println("Testing Bubble Sort");
   fillArray(numInts, largestInt);
   watch.reset();
@@ -33,8 +30,7 @@ public void bubbleSortTest()
   watch.stop();
   System.out.println("Bubble Sort took " +watch.elapsedTime()/1000 + " microseconds");
 }
-public void insertionSortTest()
-{
+public void insertionSortTest(){
   System.out.println("Testing Insertion Sort");
   fillArray(numInts, largestInt);
   watch.reset();
@@ -43,8 +39,7 @@ public void insertionSortTest()
   watch.stop();
   System.out.println("Insertion Sort took " +watch.elapsedTime()/1000 + " microseconds");
 }
-public void mergeSortTest()
-{
+public void mergeSortTest(){
   System.out.println("Testing Merge Sort");
   fillArray(numInts, largestInt);
   watch.reset();
@@ -53,10 +48,8 @@ public void mergeSortTest()
   watch.stop();
   System.out.println("Merge Sort took " +watch.elapsedTime()/1000 + " microseconds");
 }
-private void fillArray(int numInts, int largestInt)
-{
-  for (int loop = 0; loop < myArray.length; loop++)
-  {
+private void fillArray(int numInts, int largestInt) {
+  for (int loop = 0; loop < myArray.length; loop++){
     myArray[loop] = (int)(Math.random()*largestInt + 1);
   }
 }

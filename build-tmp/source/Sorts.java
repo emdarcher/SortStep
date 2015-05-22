@@ -18,9 +18,7 @@ public class Sorts{
       flag=outer;
       int temp=0; 
       for(int inner=outer+1;inner<list.length;inner++){
-        if(list[flag]>list[inner]){
-          flag=inner;
-        }
+        if(list[flag]>list[inner]){ flag=inner; }
         temp=list[outer];
         list[outer]=list[flag];
         list[flag]=temp;
@@ -35,13 +33,44 @@ public class Sorts{
         list[pos]=list[pos-1];
         --pos;
       } list[pos]=key;
+    
     }
   }
   private void merge(int[] a, int first, int mid, int last){
     //your code here
+    //int[] new_a = new int[a.length];
+    int len = last-first;
+    int[] new_a = new int[len+0];
+    int new_i = 0;
+    int i=first;int j=mid+1;
+    //for(new_i = first;new_i<last;new_i++){
+    for(new_i = 0;new_i<len;new_i++){
+      if(i>mid){
+        new_a[new_i] = a[j];
+        j++;
+      } else if(j>last){
+        new_a[new_i] = a[i];
+        i++;
+      } else if(a[i]>a[j]){
+        new_a[new_i] = a[j];
+        j++;
+      } else {
+        new_a[new_i] = a[i];
+        i++;
+      }
+    }
+    for(int k=0;k<len;k++){
+      a[k+first]=new_a[k];
+    }
   }
-  public void mergeSort(int[] a, int first, int last){
-    //your code here
-  }
-}
 
+  public void mergeSort(int[] a, int first, int last){
+    int mid = (first+last)>>1;
+    if((first-last)>1){
+      mergeSort(a,first,mid);
+      mergeSort(a,mid,last);
+    }
+    merge(a,first,mid,last);
+  }
+
+}

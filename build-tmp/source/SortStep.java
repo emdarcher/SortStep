@@ -14,8 +14,8 @@ import java.io.IOException;
 
 public class SortStep extends PApplet {
 
-private int numInts = 100;
-private int largestInt = 100;
+private int numInts = 8000;
+private int largestInt = 8192;
 private int [] myArray= new int[numInts];
 private Stopwatch watch = new Stopwatch();
 private Sorts mySorts = new Sorts();
